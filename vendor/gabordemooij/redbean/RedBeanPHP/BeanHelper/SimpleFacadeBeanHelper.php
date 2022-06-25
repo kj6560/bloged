@@ -28,7 +28,7 @@ class SimpleFacadeBeanHelper implements BeanHelper
 	/**
 	 * Factory function to create instance of Simple Model, if any.
 	 *
-	 * @var callable|NULL
+	 * @var \Closure
 	 */
 	private static $factory = null;
 
@@ -50,7 +50,7 @@ class SimpleFacadeBeanHelper implements BeanHelper
 	 * Sets the factory function to create the model when using FUSE
 	 * to connect a bean to a model.
 	 *
-	 * @param callable|NULL $factory factory function
+	 * @param \Closure $factory factory function
 	 *
 	 * @return void
 	 */
@@ -82,10 +82,6 @@ class SimpleFacadeBeanHelper implements BeanHelper
 	 * Resolves the model associated with the bean using the model name (type),
 	 * the prefix and the bean.
 	 *
-	 * @note
-	 * If REDBEAN_CLASS_AUTOLOAD is defined this will be passed to class_exist as
-	 * autoloading flag.
-	 *
 	 * @param string   $prefix Prefix to use for resolution
 	 * @param string   $model  Type name
 	 * @param OODBBean $bean   Bean to resolve model for
@@ -93,10 +89,6 @@ class SimpleFacadeBeanHelper implements BeanHelper
 	 * @return SimpleModel|CustomModel|NULL
 	 */
 	protected function resolveModel($prefix, $model, $bean) {
-
-		/* Determine autoloading preference */
-		$autoloadFlag = ( defined( 'REDBEAN_CLASS_AUTOLOAD' ) ? REDBEAN_CLASS_AUTOLOAD : TRUE );
-
 		if ( strpos( $model, '_' ) !== FALSE ) {
 			$modelParts = explode( '_', $model );
 			$modelName = '';
@@ -106,13 +98,13 @@ class SimpleFacadeBeanHelper implements BeanHelper
 			$modelName = $prefix . $modelName;
 			if ( !class_exists( $modelName ) ) {
 				$modelName = $prefix . ucfirst( $model );
-				if ( !class_exists( $modelName, $autoloadFlag ) ) {
+				if ( !class_exists( $modelName ) ) {
 					return NULL;
 				}
 			}
 		} else {
 			$modelName = $prefix . ucfirst( $model );
-			if ( !class_exists( $modelName, $autoloadFlag ) ) {
+			if ( !class_exists( $modelName ) ) {
 				return NULL;
 			}
 		}

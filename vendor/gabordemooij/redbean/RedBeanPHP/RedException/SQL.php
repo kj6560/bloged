@@ -39,8 +39,6 @@ class SQL extends RedException
 
 	/**
 	 * @param array $driverDetails
-	 *
-	 * @return void
 	 */
 	public function setDriverDetails($driverDetails)
 	{

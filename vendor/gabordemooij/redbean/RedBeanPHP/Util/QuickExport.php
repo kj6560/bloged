@@ -12,7 +12,7 @@ use RedBeanPHP\ToolBox as ToolBox;
  * The Quick Export Utility Class provides functionality to easily
  * expose the result of SQL queries as well-known formats like CSV.
  *
- * @file    RedBeanPHP/Util/QuickExport.php
+ * @file    RedBeanPHP/Util/QuickExporft.php
  * @author  Gabor de Mooij and the RedBeanPHP Community
  * @license BSD/GPLv2
  *
@@ -24,12 +24,12 @@ use RedBeanPHP\ToolBox as ToolBox;
 class QuickExport
 {
 	/**
-	 * @var ToolBox
+	 * @var Finder
 	 */
 	protected $toolbox;
 
 	/**
-	 * @var boolean
+	 * @boolean
 	 */
 	private static $test = FALSE;
 
@@ -46,13 +46,7 @@ class QuickExport
 
 	/**
 	 * Makes csv() testable.
-	 *
-	 * @param string $name
-	 * @param mixed $arg1
-	 * @param boolean $arg2
-	 *
-	 * @return mixed
- 	 */
+	 */
 	public static function operation( $name, $arg1, $arg2 = TRUE ) {
 		$out = '';
 		switch( $name ) {
@@ -101,7 +95,7 @@ class QuickExport
 	 * @param boolean $output   TRUE to output CSV directly using readfile
 	 * @param array   $options  delimiter, quote and escape character respectively
 	 *
-	 * @return string|NULL
+	 * @return void
 	 */
 	public function csv( $sql = '', $bindings = array(), $columns = NULL, $path = '/tmp/redexport_%s.csv', $output = TRUE, $options = array(',','"','\\') )
 	{
