@@ -4,9 +4,6 @@ namespace RedBeanPHP\Plugin;
 
 use RedBeanPHP\ToolBox;
 use RedBeanPHP\OODBBean;
-use RedBeanPHP\OODB;
-use RedBeanPHP\BeanHelper;
-use RedBeanPHP\R;
 
 /**
  * @experimental
@@ -22,7 +19,7 @@ use RedBeanPHP\R;
  *
  * The NonStaticBeanHelper is used by the database pool class PoolDB.
  */
-class NonStaticBeanHelper extends \RedBeanPHP\BeanHelper\SimpleFacadeBeanHelper {
+class NonStaticBeanHelper extends RedBeanPHP\BeanHelper\SimpleFacadeBeanHelper {
 
 	/**
 	 * Returns the extracted toolbox.
@@ -120,7 +117,7 @@ class NonStaticBeanHelper extends \RedBeanPHP\BeanHelper\SimpleFacadeBeanHelper 
  * This source file is subject to the BSD/GPLv2 License that is bundled
  * with this source code in the file license.txt.
  */
-class PoolDB extends OODB {
+class PoolDB extends \RedBeanPHP\OODB {
 
 	/**
 	 * @var array

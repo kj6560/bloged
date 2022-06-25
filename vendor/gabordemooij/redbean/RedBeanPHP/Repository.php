@@ -14,7 +14,7 @@ use RedBeanPHP\Cursor\NullCursor as NullCursor;
  * Abstract Repository.
  *
  * OODB manages two repositories, a fluid one that
- * adjust the database schema on-the-fly to accommodate for
+ * adjust the database schema on-the-fly to accomodate for
  * new bean types (tables) and new properties (columns) and
  * a frozen one for use in a production environment. OODB
  * allows you to swap the repository instances using the freeze()
@@ -36,18 +36,18 @@ abstract class Repository
 	 */
 	protected $stash = NULL;
 
-	/**
+	/*
 	 * @var integer
 	 */
 	protected $nesting = 0;
 
 	/**
-	 * @var QueryWriter
+	 * @var DBAdapter
 	 */
 	protected $writer;
 
 	/**
-	 * @var boolean|array
+	 * @var boolean
 	 */
 	protected $partialBeans = FALSE;
 
@@ -63,7 +63,7 @@ abstract class Repository
 	 *
 	 * @param boolean|array $yesNoBeans List of type names or 'all'
 	 *
-	 * @return boolean|array
+	 * @return mixed
 	 */
 	public function usePartialBeans( $yesNoBeans )
 	{
@@ -156,7 +156,7 @@ abstract class Repository
 	 * A bean may contain lists. This
 	 * method handles shared addition lists; i.e.
 	 * the $bean->sharedObject properties.
-	 * Shared beans will be associated with each other using the
+	 * Shared beans will be associated with eachother using the
 	 * Association Manager.
 	 *
 	 * @param OODBBean $bean            the bean
@@ -392,7 +392,7 @@ abstract class Repository
 	 * @param int     $number            number of beans you would like to get
 	 * @param boolean $alwaysReturnArray if TRUE always returns the result as an array
 	 *
-	 * @return OODBBean|OODBBean[]
+	 * @return OODBBean
 	 */
 	public function dispense( $type, $number = 1, $alwaysReturnArray = FALSE )
 	{
@@ -572,7 +572,7 @@ abstract class Repository
 	 * New in 4.3.2: meta mask. The meta mask is a special mask to send
 	 * data from raw result rows to the meta store of the bean. This is
 	 * useful for bundling additional information with custom queries.
-	 * Values of every column who's name starts with $mask will be
+	 * Values of every column whos name starts with $mask will be
 	 * transferred to the meta section of the bean under key 'data.bundle'.
 	 *
 	 * @param string $type type of beans you would like to have
@@ -671,7 +671,7 @@ abstract class Repository
 	 *
 	 * @param OODBBean|SimpleModel $bean bean you want to remove from database
 	 *
-	 * @return int
+	 * @return void
 	 */
 	public function trash( $bean )
 	{
@@ -689,7 +689,7 @@ abstract class Repository
 			}
 		}
 		try {
-			$deleted = $this->writer->deleteRecord( $bean->getMeta( 'type' ), array( 'id' => array( $bean->id ) ) );
+			$deleted = $this->writer->deleteRecord( $bean->getMeta( 'type' ), array( 'id' => array( $bean->id ) ), NULL );
 		} catch ( SQLException $exception ) {
 			$this->handleException( $exception );
 		}

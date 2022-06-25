@@ -5,20 +5,18 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'd72d585567f26f66ccbbcfd489d906daf9807955',
+        'reference' => '5b023454746c8cff16fc69f77ef06760a660b5b2',
         'name' => 'keshav_jha/bloged',
         'dev' => true,
     ),
     'versions' => array(
         'gabordemooij/redbean' => array(
-            'pretty_version' => 'dev-master',
-            'version' => 'dev-master',
+            'pretty_version' => 'v5.7.2',
+            'version' => '5.7.2.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../gabordemooij/redbean',
-            'aliases' => array(
-                0 => '9999999-dev',
-            ),
-            'reference' => '0a599233f3c5a11b67afc17ca5601a334378554e',
+            'aliases' => array(),
+            'reference' => '2c8ce8a57ed61fce34da1dabbf0f879d76e1ed26',
             'dev_requirement' => false,
         ),
         'keshav_jha/bloged' => array(
@@ -27,7 +25,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'd72d585567f26f66ccbbcfd489d906daf9807955',
+            'reference' => '5b023454746c8cff16fc69f77ef06760a660b5b2',
             'dev_requirement' => false,
         ),
         'symfony/deprecation-contracts' => array(
