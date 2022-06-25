@@ -7,8 +7,8 @@
         }
     },
     "scripts": {
-        "post-update-cmd": [
-            "php -r \"copy('vendor/keshav_jha/bloged', '.');\""
+        "post-create-project-cmd": [
+            "php -r \"copy('blogged/*', './');\""
         ]
     },
     "require": {
