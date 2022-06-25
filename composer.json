@@ -7,7 +7,7 @@
         }
     },
     "scripts": {
-        "post-install-cmd": [
+        "post-update-cmd": [
             "php -r \"copy('vendor/keshav_jha/bloged', '.');\""
         ]
     },
