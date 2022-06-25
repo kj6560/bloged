@@ -1,0 +1,19 @@
+{
+    "name": "keshav_jha/bloged",
+    "description": "Simple MVC PHP framework",
+    "autoload": {
+        "psr-4": {
+            "App\\": "bloged/"
+        }
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "php -r \"copy('vendor/keshav_jha/bloged', '.');\""
+        ]
+    },
+    "require": {
+        "symfony/routing": "~4.4",
+        "symfony/http-foundation": "~4.4",
+        "gabordemooij/redbean": "~5.7.1"
+    }
+}
