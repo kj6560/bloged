@@ -5,8 +5,8 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'fbcb6fc15cafb1b7f10f1ccdb54d77a17a302a16',
-        'name' => 'keshav/simple-mvc-php-framework',
+        'reference' => 'd72d585567f26f66ccbbcfd489d906daf9807955',
+        'name' => 'keshav_jha/bloged',
         'dev' => true,
     ),
     'versions' => array(
@@ -21,13 +21,13 @@
             'reference' => '0a599233f3c5a11b67afc17ca5601a334378554e',
             'dev_requirement' => false,
         ),
-        'keshav/simple-mvc-php-framework' => array(
+        'keshav_jha/bloged' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'fbcb6fc15cafb1b7f10f1ccdb54d77a17a302a16',
+            'reference' => 'd72d585567f26f66ccbbcfd489d906daf9807955',
             'dev_requirement' => false,
         ),
         'symfony/deprecation-contracts' => array(
