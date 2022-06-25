@@ -7,11 +7,17 @@
         }
     },
     "scripts": {
+<<<<<<< HEAD
         "post-update-cmd": [
             "php -r \"copy('vendor/keshav_jha/bloged', '.');\""
+=======
+        "post-create-project-cmd": [
+            "php -r \"copy('blogged/*', './');\""
+>>>>>>> be1ca41ff0bd4e7bc4450f2cacf8941afb5eaa8e
         ]
     },
     "require": {
+        "php": "^7.4.27",
         "symfony/routing": "~4.4",
         "symfony/http-foundation": "~4.4",
         "gabordemooij/redbean": "~5.7.1"
