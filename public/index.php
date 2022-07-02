@@ -1,4 +1,7 @@
 <?php
+
+use App\Commands\Bloged;
+
 ini_set('display_errors', '1');
 ini_set('display_startup_errors', '1');
 
@@ -16,3 +19,5 @@ require_once '../config/app_auth.php';
 require_once '../routes/web.php';
 require_once '../app/Router.php';
 require_once '../app/AppHelpers.php';
+require_once '../app/Commands/Bloged.php';
+(new Bloged)->action($argv);
