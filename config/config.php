@@ -14,9 +14,3 @@ $password = "mainsite";
 $database = "mainsite";
 R::setup("mysql:host=$host;dbname=$database", $username, $password);
 R::freeze( TRUE );
-
-use Symfony\Component\Console\Application;
-
-$application = new Application();
-
-$application->run();
