@@ -1,20 +1,14 @@
 {
-    "name": "keshav_jha/bloged",
+    "name": "keshav/bloged",
     "description": "Simple MVC PHP framework",
     "autoload": {
         "psr-4": {
-            "App\\": "bloged/"
+            "App\\": "app/"
         }
     },
-    "scripts": {
-        "post-create-project-cmd": [
-            "php -r \"copy('blogged/*', './');\""
-        ]
-    },
     "require": {
-        "php": "^7.4.27",
-        "symfony/routing": "~4.4",
-        "symfony/http-foundation": "~4.4",
-        "gabordemooij/redbean": "~5.7.1"
+        "symfony/routing": "^4.4",
+        "symfony/http-foundation": "^4.4",
+        "gabordemooij/redbean": "dev-master"
     }
 }
