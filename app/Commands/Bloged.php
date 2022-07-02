@@ -7,8 +7,8 @@ class Bloged
 {
     public function action($args)
     {
-        $script = array_shift($args);
-
-        print($args[0]);
+        require_once "/".ucfirst($args[0]).".php";
+        $classname = ucfirst($args[0]);
+        $comm = new $classname;
     }
 }
