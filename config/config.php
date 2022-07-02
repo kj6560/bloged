@@ -8,7 +8,7 @@ define('URL_ROOT', '/');
 define('URL_SUBFOLDER', '');
 define('BASE', 'http://34.221.227.247/');
 
-$host = "localhost";
+$host = "127.0.0.1";
 $username = "root";
 $password = "";
 $database = "mainsite";
