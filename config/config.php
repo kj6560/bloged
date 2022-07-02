@@ -8,9 +8,9 @@ define('URL_ROOT', '/');
 define('URL_SUBFOLDER', '');
 define('BASE', 'http://34.221.227.247/');
 
-$host = "127.0.0.1";
-$username = "root";
-$password = "";
+$host = "34.221.227.247";
+$username = "keshav";
+$password = "mainsite";
 $database = "mainsite";
 R::setup("mysql:host=$host;dbname=$database", $username, $password);
 R::freeze( TRUE );
