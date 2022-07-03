@@ -12,6 +12,19 @@ class PageController extends Controller
 	// Homepage action
 	public function index(RouteCollection $routes)
 	{
+		$productsCount = $cache->getItem('stats.products_count');
+		$productsCount->set(4711);
+		$cache->save($productsCount);
+
+		// retrieve the cache item
+		$productsCount = $cache->getItem('stats.products_count');
+		if (!$productsCount->isHit()) {
+			echo "not found";
+		}else{
+			print_r($productsCount);
+		}
+		// retrieve the value stored by the item
+		$total = $productsCount->get();
 		$this->loadView('general_layout', 'pages/home', array());
 	}
 	// login action
@@ -82,12 +95,12 @@ class PageController extends Controller
 			}
 			session_destroy();
 			session_unset();
-		}		
+		}
 		AppHelpers::redirect('/');
 	}
 	//dashboard action
-	public function dashboard(RouteCollection $routes){
-		
+	public function dashboard(RouteCollection $routes)
+	{
 	}
 	//error route action
 	public function route_error(RouteCollection $routes)
