@@ -19,3 +19,8 @@ require_once '../config/app_auth.php';
 require_once '../routes/web.php';
 require_once '../app/Router.php';
 require_once '../app/AppHelpers.php';
+
+
+use Symfony\Component\Cache\Adapter\FilesystemAdapter;
+
+$cache = new FilesystemAdapter();
