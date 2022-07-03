@@ -7,6 +7,7 @@ use App\Models\Organisation;
 use App\Models\User;
 use Symfony\Component\Routing\RouteCollection;
 
+
 class PageController extends Controller
 {
 	// Homepage action
@@ -82,12 +83,12 @@ class PageController extends Controller
 			}
 			session_destroy();
 			session_unset();
-		}		
+		}
 		AppHelpers::redirect('/');
 	}
 	//dashboard action
-	public function dashboard(RouteCollection $routes){
-		
+	public function dashboard(RouteCollection $routes)
+	{
 	}
 	//error route action
 	public function route_error(RouteCollection $routes)
