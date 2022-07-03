@@ -1,6 +1,6 @@
 <?php
 //site name
-define('SITE_NAME', 'Bloged');
+define('SITE_NAME', 'Shiwkesh Schematics');
 
 //App Root
 define('APP_ROOT', dirname(dirname(__FILE__)));
