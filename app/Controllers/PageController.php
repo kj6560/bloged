@@ -6,28 +6,13 @@ use App\AppHelpers;
 use App\Models\Organisation;
 use App\Models\User;
 use Symfony\Component\Routing\RouteCollection;
-use Symfony\Component\Cache\Adapter\FilesystemAdapter;
+
 
 class PageController extends Controller
 {
 	// Homepage action
 	public function index(RouteCollection $routes)
 	{
-
-
-		$cache = new FilesystemAdapter();
-		$productsCount = $cache->getItem('stats.products_count');
-		$productsCount->set(4711);
-		$cache->save($productsCount);
-
-		// retrieve the cache item
-		$productsCount = $cache->getItem('stats.products_count');
-		if (!$productsCount->isHit()) {
-			// ... item does not exist in the cache
-		}
-		// retrieve the value stored by the item
-		$total = $productsCount->get();
-		print_r($total);
 		$this->loadView('general_layout', 'pages/home', array());
 	}
 	// login action
