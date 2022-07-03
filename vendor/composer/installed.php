@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '7883af2fd4e1697ef231850fb50f357bbaa0d151',
+        'reference' => '88dafb4e6c8ea83798cf2ef3f25433592ae8b599',
         'name' => 'keshav/bloged',
         'dev' => true,
     ),
@@ -27,7 +27,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '7883af2fd4e1697ef231850fb50f357bbaa0d151',
+            'reference' => '88dafb4e6c8ea83798cf2ef3f25433592ae8b599',
             'dev_requirement' => false,
         ),
         'psr/cache' => array(
