@@ -1,6 +1,6 @@
 <?php
 //site name
-define('SITE_NAME', 'Shiwkesh Schematics');
+define('SITE_NAME', 'Shiwkesh Schematics Private Limited');
 
 //App Root
 define('APP_ROOT', dirname(dirname(__FILE__)));
@@ -10,7 +10,7 @@ define('BASE', 'https://shiwkesh.online/');
 
 $host = "localhost";
 $username = "shiwkes1_mainsite";
-$password = "mainsite123";
+$password = "mainsite123"; 
 $database = "shiwkes1_mainsite";
 R::setup("mysql:host=$host;dbname=$database", $username, $password);
 R::freeze( TRUE );
