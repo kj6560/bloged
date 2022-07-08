@@ -2,12 +2,12 @@
 <html lang="en">
 
 <head>
-    <!-- Theme Made By www.w3schools.com -->
+
     <title><?php
 
-use App\Auth;
+            use App\Auth;
 
- echo SITE_NAME;?></title>
+            echo SITE_NAME; ?></title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -247,7 +247,7 @@ use App\Auth;
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/">Organisation</a>
+                <a class="navbar-brand" href="/">Shiwkesh Schematics</a>
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
@@ -256,22 +256,22 @@ use App\Auth;
                     <li><a href="#portfolio">PORTFOLIO</a></li>
                     <li><a href="#pricing">PRICING</a></li>
                     <li><a href="#contact">CONTACT</a></li>
-                        <?php
-                            $user = Auth::logger('user');
-                            if(!empty($user)){
-                                ?>
-                                <li><a href="/dashboard">DASHBOARD</a></li>
-                                <li><a href="/logout">
+                    <?php
+                    $user = Auth::logger('user');
+                    if (!empty($user)) {
+                    ?>
+                        <li><a href="/dashboard">DASHBOARD</a></li>
+                        <li><a href="/logout">
                             <?php
-                                echo "Logout(".$user['name'].")";
-                            }else{
-                                ?>
-                                <li><a href="/login">
-                                <?php 
-                                echo "Login";
-                            } 
-                        ?>
-                    </a></li>
+                            echo "Logout(" . $user['name'] . ")";
+                        } else {
+                            ?>
+                        <li><a href="/login">
+                            <?php
+                            echo "Login";
+                        }
+                            ?>
+                            </a></li>
                 </ul>
             </div>
         </div>
@@ -280,5 +280,11 @@ use App\Auth;
     <?php require $data['view']; ?>
 
 </body>
+<footer class="container-fluid text-center">
+    <a href="#myPage" title="To Top">
+        <span class="glyphicon glyphicon-chevron-up"></span>
+    </a>
+    <p> All rights reserved &copy; Shiwkesh Schematics Private Limited</p>
+</footer>
 
 </html>

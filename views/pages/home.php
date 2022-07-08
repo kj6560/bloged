@@ -1,14 +1,6 @@
 <div class="jumbotron text-center">
         <h1>Company</h1>
         <p>We specialize in blablabla</p>
-        <form>
-            <div class="input-group">
-                <input type="email" class="form-control" size="50" placeholder="Email Address" required>
-                <div class="input-group-btn">
-                    <button type="button" class="btn btn-danger">Subscribe</button>
-                </div>
-            </div>
-        </form>
     </div>
 
     <!-- Container (About Section) -->
@@ -243,12 +235,7 @@
     <!-- Image of location/map -->
     <img src="/w3images/map.jpg" class="w3-image w3-greyscale-min" style="width:100%">
 
-    <footer class="container-fluid text-center">
-        <a href="#myPage" title="To Top">
-            <span class="glyphicon glyphicon-chevron-up"></span>
-        </a>
-        <p>Bootstrap Theme Made By <a href="https://www.w3schools.com" title="Visit w3schools">www.w3schools.com</a></p>
-    </footer>
+    
 
     <script>
         $(document).ready(function() {
