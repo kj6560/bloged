@@ -1,263 +1,81 @@
+<?php
+
+use App\Auth;
+
+$user = Auth::logger('user');
+?>
+
+
+
+
+
+
+
 <!DOCTYPE html>
-<html lang="en">
+
+<html lang="zxx">
 
 <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="description" content="Orbitor,business,company,agency,modern,bootstrap4,tech,software">
+    <meta name="author" content="themefisher.com">
 
-    <title><?php
+    <title>Orbitor - Software Company Template</title>
 
-            use App\Auth;
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
 
-            echo SITE_NAME; ?></title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <style>
-        body {
-            font: 400 15px Lato, sans-serif;
-            line-height: 1.8;
-            color: #818181;
-        }
+    <!-- bootstrap.min css -->
+    <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
+    <!-- Icon Font Css -->
+    <link rel="stylesheet" href="plugins/themify/css/themify-icons.css">
+    <link rel="stylesheet" href="plugins/fontawesome/css/all.css">
+    <link rel="stylesheet" href="plugins/magnific-popup/dist/magnific-popup.css">
+    <link rel="stylesheet" href="plugins/modal-video/modal-video.css">
+    <link rel="stylesheet" href="plugins/animate-css/animate.css">
+    <!-- Slick Slider  CSS -->
+    <link rel="stylesheet" href="plugins/slick-carousel/slick/slick.css">
+    <link rel="stylesheet" href="plugins/slick-carousel/slick/slick-theme.css">
 
-        h2 {
-            font-size: 24px;
-            text-transform: uppercase;
-            color: #303030;
-            font-weight: 600;
-            margin-bottom: 30px;
-        }
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
 
-        h4 {
-            font-size: 19px;
-            line-height: 1.375em;
-            color: #303030;
-            font-weight: 400;
-            margin-bottom: 30px;
-        }
-
-        .jumbotron {
-            background-color: #f4511e;
-            color: #fff;
-            padding: 100px 25px;
-            font-family: Montserrat, sans-serif;
-        }
-
-        .container-fluid {
-            padding: 60px 50px;
-        }
-
-        .bg-grey {
-            background-color: #f6f6f6;
-        }
-
-        .logo-small {
-            color: #f4511e;
-            font-size: 50px;
-        }
-
-        .logo {
-            color: #f4511e;
-            font-size: 200px;
-        }
-
-        .thumbnail {
-            padding: 0 0 15px 0;
-            border: none;
-            border-radius: 0;
-        }
-
-        .thumbnail img {
-            width: 100%;
-            height: 100%;
-            margin-bottom: 10px;
-        }
-
-        .carousel-control.right,
-        .carousel-control.left {
-            background-image: none;
-            color: #f4511e;
-        }
-
-        .carousel-indicators li {
-            border-color: #f4511e;
-        }
-
-        .carousel-indicators li.active {
-            background-color: #f4511e;
-        }
-
-        .item h4 {
-            font-size: 19px;
-            line-height: 1.375em;
-            font-weight: 400;
-            font-style: italic;
-            margin: 70px 0;
-        }
-
-        .item span {
-            font-style: normal;
-        }
-
-        .panel {
-            border: 1px solid #f4511e;
-            border-radius: 0 !important;
-            transition: box-shadow 0.5s;
-        }
-
-        .panel:hover {
-            box-shadow: 5px 0px 40px rgba(0, 0, 0, .2);
-        }
-
-        .panel-footer .btn:hover {
-            border: 1px solid #f4511e;
-            background-color: #fff !important;
-            color: #f4511e;
-        }
-
-        .panel-heading {
-            color: #fff !important;
-            background-color: #f4511e !important;
-            padding: 25px;
-            border-bottom: 1px solid transparent;
-            border-top-left-radius: 0px;
-            border-top-right-radius: 0px;
-            border-bottom-left-radius: 0px;
-            border-bottom-right-radius: 0px;
-        }
-
-        .panel-footer {
-            background-color: white !important;
-        }
-
-        .panel-footer h3 {
-            font-size: 32px;
-        }
-
-        .panel-footer h4 {
-            color: #aaa;
-            font-size: 14px;
-        }
-
-        .panel-footer .btn {
-            margin: 15px 0;
-            background-color: #f4511e;
-            color: #fff;
-        }
-
-        .navbar {
-            margin-bottom: 0;
-            background-color: #f4511e;
-            z-index: 9999;
-            border: 0;
-            font-size: 12px !important;
-            line-height: 1.42857143 !important;
-            letter-spacing: 4px;
-            border-radius: 0;
-            font-family: Montserrat, sans-serif;
-        }
-
-        .navbar li a,
-        .navbar .navbar-brand {
-            color: #fff !important;
-        }
-
-        .navbar-nav li a:hover,
-        .navbar-nav li.active a {
-            color: #f4511e !important;
-            background-color: #fff !important;
-        }
-
-        .navbar-default .navbar-toggle {
-            border-color: transparent;
-            color: #fff !important;
-        }
-
-        footer .glyphicon {
-            font-size: 20px;
-            margin-bottom: 20px;
-            color: #f4511e;
-        }
-
-        .slideanim {
-            visibility: hidden;
-        }
-
-        .slide {
-            animation-name: slide;
-            -webkit-animation-name: slide;
-            animation-duration: 1s;
-            -webkit-animation-duration: 1s;
-            visibility: visible;
-        }
-
-        @keyframes slide {
-            0% {
-                opacity: 0;
-                transform: translateY(70%);
-            }
-
-            100% {
-                opacity: 1;
-                transform: translateY(0%);
-            }
-        }
-
-        @-webkit-keyframes slide {
-            0% {
-                opacity: 0;
-                -webkit-transform: translateY(70%);
-            }
-
-            100% {
-                opacity: 1;
-                -webkit-transform: translateY(0%);
-            }
-        }
-
-        @media screen and (max-width: 768px) {
-            .col-sm-4 {
-                text-align: center;
-                margin: 25px 0;
-            }
-
-            .btn-lg {
-                width: 100%;
-                margin-bottom: 35px;
-            }
-        }
-
-        @media screen and (max-width: 480px) {
-            .logo {
-                font-size: 150px;
-            }
-        }
-    </style>
 </head>
 
-<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+<body>
 
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="/">Shiwkesh Schematics</a>
-            </div>
-            <div class="collapse navbar-collapse" id="myNavbar">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#about">ABOUT</a></li>
-                    <li><a href="#services">SERVICES</a></li>
-                    <li><a href="#portfolio">PORTFOLIO</a></li>
-                    <li><a href="#pricing">PRICING</a></li>
-                    <li><a href="#contact">CONTACT</a></li>
+
+
+    <nav class="navbar navbar-expand-lg py-4 navigation header-padding " id="navbar">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/logo.png" alt="" class="img-fluid">
+            </a>
+
+            <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="fa fa-bars"></span>
+            </button>
+
+            <div class="collapse navbar-collapse text-center" id="navbarsExample09">
+                <ul class="navbar-nav m-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="service.html">Services</a></li>
+
+                    <li class="nav-item"><a class="nav-link" href="project.html">Portfolio</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown05" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blog</a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdown05">
+                            <li><a class="dropdown-item" href="blog-sidebar.html">Blog with Sidebar</a></li>
+
+                            <li><a class="dropdown-item" href="blog-single.html">Blog Single</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                     <?php
-                    $user = Auth::logger('user');
+
                     if (!empty($user)) {
                     ?>
                         <li><a href="/dashboard">DASHBOARD</a></li>
@@ -268,23 +86,110 @@
                             ?>
                         <li><a href="/login">
                             <?php
-                            echo "Login";
+                            echo "Signin";
                         }
                             ?>
-                            </a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Signin/Signup</a></li>
                 </ul>
+
+                <a href="contact.html" class="btn btn-solid-border d-none d-lg-block">Get an estimate <i class="fa fa-angle-right ml-2"></i></a>
             </div>
         </div>
     </nav>
 
     <?php require $data['view']; ?>
 
+
+    <!-- footer Start -->
+    <footer class="footer section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 mr-auto col-sm-6">
+                    <div class="widget mb-5 mb-lg-0">
+                        <div class="logo mb-4">
+                            <h3>Orbitor</h3>
+                        </div>
+                        <p>Tempora dolorem voluptatum nam vero assumenda voluptate, facilis ad eos obcaecati tenetur veritatis eveniet distinctio possimus.</p>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 col-sm-6">
+                    <div class="widget mb-5 mb-lg-0">
+                        <h4 class="text-capitalize mb-4">Company</h4>
+
+                        <ul class="list-unstyled footer-menu lh-35">
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Services</a></li>
+                            <li><a href="#">Team</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="widget mb-5 mb-lg-0">
+                        <h4 class="text-capitalize mb-4">Support</h4>
+
+                        <ul class="list-unstyled footer-menu lh-35">
+                            <li><a href="#">Terms & Conditions</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Support</a></li>
+                            <li><a href="#">FAQ</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="widget widget-contact mb-5 mb-lg-0">
+                        <h4 class="text-capitalize mb-4">Get in Touch</h4>
+                        <h6><a href="tel:+23-345-67890"> <i class="ti-headphone-alt mr-3"></i>Support@megakit.com</a></h6>
+                        <h6><a href="mailto:support@gmail.com"> <i class="ti-mobile mr-3"></i>+23-456-6588</a></h6>
+
+                        <ul class="list-inline footer-socials mt-5">
+                            <li class="list-inline-item"><a href="https://www.facebook.com/themefisher"><i class="ti-facebook mr-2"></i></a></li>
+                            <li class="list-inline-item"><a href="https://twitter.com/themefisher"><i class="ti-twitter mr-2"></i></a></li>
+                            <li class="list-inline-item"><a href="https://www.pinterest.com/themefisher/"><i class="ti-linkedin mr-2 "></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-btm py-4 mt-5">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="copyright">
+                            &copy; Copyright Reserved to <span class="text-color">Orbitor</span> by <a href="https://themefisher.com/" target="_blank">Themefisher</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- 
+    Essential Scripts
+    =====================================-->
+
+
+    <!-- Main jQuery -->
+    <script src="plugins/jquery/jquery.js"></script>
+    <script src="js/contact.js"></script>
+    <!-- Bootstrap 4.3.2 -->
+    <script src="plugins/bootstrap/js/popper.js"></script>
+    <script src="plugins/bootstrap/js/bootstrap.min.js"></script>
+    <!--  Magnific Popup-->
+    <script src="plugins/magnific-popup/dist/jquery.magnific-popup.min.js"></script>
+    <!-- Slick Slider -->
+    <script src="plugins/slick-carousel/slick/slick.min.js"></script>
+    <!-- Counterup -->
+    <script src="plugins/counterup/jquery.waypoints.min.js"></script>
+    <script src="plugins/counterup/jquery.counterup.min.js"></script>
+
+    <script src="plugins/modal-video/modal-video.js"></script>
+    <!-- Google Map -->
+    <script src="plugins/google-map/map.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkeLMlsiwzp6b3Gnaxd86lvakimwGA6UA&callback=initMap"></script>
+
+    <script src="js/script.js"></script>
+
 </body>
-<footer class="container-fluid text-center">
-    <a href="#myPage" title="To Top">
-        <span class="glyphicon glyphicon-chevron-up"></span>
-    </a>
-    <p> All rights reserved &copy; Shiwkesh Schematics Private Limited</p>
-</footer>
 
 </html>
